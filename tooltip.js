@@ -27,6 +27,7 @@ class Tooltip extends HTMLElement{
                 :host-context(p){
                     font-weight: bold;
                     font-size: 15px;
+                    position: relative;
                 }
                 ::slotted(.highlight){
                     font-family: verdana;                  
@@ -52,7 +53,6 @@ class Tooltip extends HTMLElement{
         this._tooltipIcon = this.shadowRoot.querySelector('span')
         this._tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
         this._tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
-        this.style.position = "relative";
     }
 
     attributeChangedCallback(name, oldValue, newValue){
